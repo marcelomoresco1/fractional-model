@@ -13,7 +13,7 @@
 <meta name="twitter:title" content="Marcelo Moresco — Fractional CMO & Director General">
 <meta name="twitter:description" content="Marketing, retail media y gestión general en modo fractional, sin el costo de un full-time.">
 <meta name="twitter:image" content="https://moresco-fractionalmodel.com/og-image.png">
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHZpZXdCb3g9JzAgMCAxMDAgMTAwJz48cmVjdCB3aWR0aD0nMTAwJyBoZWlnaHQ9JzEwMCcgcng9JzIyJyBmaWxsPScjMTQxODFGJy8+PGcgdHJhbnNmb3JtPSd0cmFuc2xhdGUoMTUsMzIuNSknPjxtYXNrIGlkPSdtJz48cmVjdCB3aWR0aD0nNzAnIGhlaWdodD0nMzUnIHJ4PScxNy41JyBmaWxsPSd3aGl0ZScvPjxjaXJjbGUgY3g9JzUyLjUnIGN5PScxNy41JyByPScxMScgZmlsbD0nYmxhY2snLz48L21hc2s+PHJlY3Qgd2lkdGg9JzcwJyBoZWlnaHQ9JzM1JyByeD0nMTcuNScgZmlsbD0nIzFENEVEOCcgbWFzaz0ndXJsKCUyM20pJy8+PC9nPjwvc3ZnPg==">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHZpZXdCb3g9JzAgMCAxMDAgMTAwJz48cmVjdCB3aWR0aD0nMTAwJyBoZWlnaHQ9JzEwMCcgcng9JzIyJyBmaWxsPScjMTQxODFGJy8+PGcgdHJhbnNmb3JtPSd0cmFuc2xhdGUoMTUsMzIuNSknPjxtYXNrIGlkPSdtJz48cmVjdCB3aWR0aD0nNzAnIGhlaWdodD0nMzUnIHJ4PScxNy41JyBmaWxsPSd3aGl0ZScvPjxjaXJjbGUgY3g9JzUyLjUnIGN5PScxNy41JyByPScxMScgZmlsbD0nYmxhY2snLz48L21hc2s+PHJlY3Qgd2lkdGg9JzcwJyBoZWlnaHQ9JzM1JyByeD0nMTcuNScgZmlsbD0nIzA0MzQ2NCcgbWFzaz0ndXJsKCUyM20pJy8+PC9nPjwvc3ZnPg==">
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -26,8 +26,8 @@
     --ink-muted:#5B6472;
     --ink-faint:#8B93A1;
     --rule:#E1E5EB;
-    --accent:#1D4ED8;
-    --accent-strong:#1E40AF;
+    --accent:#043464;
+    --accent-strong:#03274B;
     --accent-contrast:#FFFFFF;
     --brass:#4B5563;
     --brass-bg:#EEF1F5;
@@ -80,6 +80,8 @@
     -webkit-font-smoothing:antialiased;
   }
 
+  .band-navy, .band-navy *{ color:var(--ink); }
+
   h1,h2,h3{ font-family:"Fraunces", Georgia, serif; text-wrap:balance; color:var(--ink); font-weight:600; }
   .eyebrow{
     font-family:"IBM Plex Mono", ui-monospace, monospace;
@@ -95,6 +97,19 @@
 
   section{ border-top:1px solid var(--rule); }
   .band{ background:var(--paper-raised); }
+  .band-navy{
+    background:#043464;
+    --ink:#FFFFFF;
+    --ink-muted:#B7C2D6;
+    --ink-faint:#93A0B5;
+    --rule:#2C5D8F;
+    --paper-raised:#0B4A82;
+    --accent:#FFFFFF;
+    --accent-strong:#DCE6F5;
+    --accent-contrast:#043464;
+    --brass:#B7C2D6;
+    --brass-bg:#0B4A82;
+  }
 
   /* ---------- NAV ---------- */
   header.site{
@@ -234,9 +249,19 @@
   .field input, .field textarea{
     width:100%; font-family:"Archivo"; font-size:0.95rem; padding:11px 13px; border-radius:3px;
     border:1px solid var(--rule); background:var(--paper-raised); color:var(--ink);
+    -webkit-appearance:none; appearance:none;
   }
   .field textarea{ resize:vertical; min-height:96px; }
   .field input:focus, .field textarea:focus{ outline:2px solid var(--accent); outline-offset:1px; }
+  .field input:-webkit-autofill,
+  .field input:-webkit-autofill:hover,
+  .field input:-webkit-autofill:focus,
+  .field textarea:-webkit-autofill{
+    -webkit-text-fill-color:var(--ink);
+    -webkit-box-shadow:0 0 0 1000px var(--paper-raised) inset;
+    box-shadow:0 0 0 1000px var(--paper-raised) inset;
+    transition:background-color 9999s ease-in-out 0s;
+  }
   .contact-info dt{ font-family:"IBM Plex Mono", monospace; font-size:0.7rem; text-transform:uppercase; letter-spacing:0.08em; color:var(--ink-faint); margin-top:22px; }
   .contact-info dt:first-child{ margin-top:0; }
   .contact-info dd{ font-size:1.05rem; margin-top:4px; }
@@ -311,7 +336,7 @@
             <rect x="0" y="0" width="200" height="100" rx="50" fill="#fff"/>
             <circle cx="150" cy="50" r="32" fill="#000"/>
           </mask>
-          <rect x="0" y="0" width="200" height="100" rx="50" fill="#1D4ED8" mask="url(#mm-toggle-mask)"/>
+          <rect x="0" y="0" width="200" height="100" rx="50" fill="var(--paper)" mask="url(#mm-toggle-mask)"/>
         </svg>
       </span>
       <span>
@@ -345,7 +370,7 @@
   </section>
 
   <!-- 01 EL MODELO -->
-  <section class="sec band" id="modelo">
+  <section class="sec band band-navy" id="modelo">
     <div class="wrap reveal">
       <div class="sec-head">
         <p class="eyebrow">El modelo</p>
@@ -402,7 +427,7 @@
   </section>
 
   <!-- 03 COMO TRABAJO -->
-  <section class="sec band">
+  <section class="sec band band-navy" id="proceso">
     <div class="wrap reveal">
       <div class="sec-head">
         <p class="eyebrow">El proceso</p>
@@ -762,7 +787,7 @@
   </section>
 
   <!-- 05 TRAYECTORIA -->
-  <section class="sec band" id="trayectoria">
+  <section class="sec band band-navy" id="trayectoria">
     <div class="wrap-wide reveal">
       <div class="sec-head">
         <p class="eyebrow">Trayectoria</p>
@@ -927,7 +952,7 @@
   </section>
 
   <!-- CONTACTO -->
-  <section class="sec" id="contacto">
+  <section class="sec band-navy" id="contacto">
     <div class="wrap reveal">
       <div class="sec-head">
         <p class="eyebrow">Contacto</p>
@@ -956,8 +981,7 @@
 <footer>
   <div class="wrap">
     <div class="foot-row">
-      <span>© 2026 Marcelo Moresco — Fractional CMO &amp; Director General</span>
-      <span>Branding · Shopper Marketing · Retail Media · Marketing Digital</span>
+      <span>© 2026 Marcelo Moresco — Fractional Director General y Fractional CMO</span>
     </div>
   </div>
 </footer>
